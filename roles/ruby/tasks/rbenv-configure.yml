@@ -1,7 +1,0 @@
-- name: Ruby | Sets global rbenv version
-  template: src=global_ruby_version.j2 dest=~/.rbenv/version owner={{ ruby_deploy_user }} group={{ ruby_deploy_user }}
-  tags:
-    - ruby
-    - ruby:install
-    - install
-    - version
