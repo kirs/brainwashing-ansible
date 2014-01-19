@@ -19,6 +19,7 @@
   with_items:
     - libpq-dev
     - python-dev
+    - python-pip
 
 - name: Install pip package for postgresql
   pip: name=psycopg2
