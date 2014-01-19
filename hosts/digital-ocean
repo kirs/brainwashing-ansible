@@ -1,0 +1,2 @@
+[web]
+digital-ocean-1 ansible_ssh_host=188.226.142.145 ansible_ssh_user=root

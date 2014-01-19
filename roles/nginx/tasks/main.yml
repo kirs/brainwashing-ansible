@@ -1,0 +1,17 @@
+- name: Installs nginx web server
+  apt: pkg=nginx state=installed update_cache=true
+
+- name: Remove default nginx host
+  file: path=/etc/nginx/sites-enabled/default state=absent
+  notify:
+    - restart nginx
+
+- name: Push nginx app host configuration
+  template: src=brainwashing.nginx.conf dest=/etc/nginx/sites-available/brainwashing.app mode=0640
+  notify:
+    - restart nginx
+
+- name: Enable nginx app host
+  file: src=/etc/nginx/sites-available/brainwashing.app dest=/etc/nginx/sites-enabled/brainwashing.app owner=root group=root state=link
+  notify:
+    - restart nginx

@@ -1,0 +1,6 @@
+- hosts: web
+  roles:
+    - role: ruby
+      version: 2.0.0-p353
+    - role: nginx
+    - role: postgres
